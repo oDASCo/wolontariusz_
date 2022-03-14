@@ -1,0 +1,11 @@
+mat-list.menu {
+  mat-icon {
+    margin-right: 10px;
+  }
+  mat-list-item {
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(128 128 128 / 15%);
+    }
+  }
+}

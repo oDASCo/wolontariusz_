@@ -1,0 +1,13 @@
+.points-list {
+  .title {
+    margin-bottom: 20px;
+  }
+  mat-card {
+    margin-bottom: 10px;
+    cursor: pointer;
+    mat-card-title {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

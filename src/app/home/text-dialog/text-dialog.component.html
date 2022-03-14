@@ -1,0 +1,12 @@
+<mat-dialog-content>
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Новый текст</mat-label>
+    <textarea
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="5"
+      cdkAutosizeMaxRows="8"
+      #autosize="cdkTextareaAutosize"
+      [formControl]="text" matInput></textarea>
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="changeText()">Сохранить</button>
+</mat-dialog-content>

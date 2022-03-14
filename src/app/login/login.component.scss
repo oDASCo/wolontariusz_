@@ -1,0 +1,12 @@
+.registr {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  mat-form-field {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+::ng-deep .content .mat-tab-label-container .mat-tab-labels {
+  justify-content: center;
+}

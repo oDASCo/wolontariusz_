@@ -1,0 +1,62 @@
+<div class="points-list container">
+  <h3 class="title"> {{point?.name}}</h3>
+  <form [formGroup]="pointForm">
+    <div class="field-line">
+      <p>Волонтеры: </p>
+<!--      <mat-form-field appearance="fill" class="small-field">-->
+<!--        <mat-label></mat-label>-->
+<!--        <input formControlName="volNum" matInput>-->
+<!--      </mat-form-field>-->
+<!--      <div style="font-weight: bold">{{point?.volNum}}</div>-->
+      <button style="cursor: default;" mat-flat-button color="accent">{{point?.volNum}}</button>
+    </div>
+    <div class="field-line">
+      <p>"Условные" волонтеры: (не из нашей группы)</p>
+      <mat-form-field appearance="fill"  class="small-field">
+        <mat-label></mat-label>
+        <input formControlName="external_vol"  matInput>
+      </mat-form-field>
+    </div>
+    <div class="field-line" *ngIf="routePath !== 'cash-desk'
+    && routePath !== 'storage' && routePath !== 'main-enter'">
+      <p>Спальные места: </p>
+      <mat-form-field appearance="fill"  class="small-field">
+        <mat-label></mat-label>
+        <input formControlName="places"  matInput>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Комментарий: (Важная информация на данный момент)</mat-label>
+      <textarea  formControlName="comment" matInput></textarea>
+    </mat-form-field>
+    <div class="field-line">
+      <p>Нужна замена :</p>
+        <div  class="replace-check">
+          <mat-slide-toggle
+            [formControl]="needReplace"
+            class="example-margin"
+            [color]="'accent'"
+          >
+          </mat-slide-toggle>
+
+        </div>
+
+      <mat-form-field appearance="fill" style="width: 150px;">
+        <div>
+          <input placeholder="Во сколько:" formControlName="replaceTime"  matInput>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <button mat-flat-button color="primary" (click)="savePoint()">Сохранить</button>
+  </form>
+
+  <div style="margin-top: 25px;">
+    <p style="margin-bottom: 10px;">На этом пункте сейчас:</p>
+    <mat-card *ngFor="let user of volunteers">
+      <mat-icon style="display: inline"> person_pin_circle</mat-icon>
+      <p>{{user?.name}} | {{user?.phone}}</p>
+    </mat-card>
+  </div>
+</div>

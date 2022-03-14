@@ -1,0 +1,85 @@
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.s-head-block {
+  display: flex;
+  p {
+    width:  32%;
+  }
+}
+.s-day-block {
+  .s-day-value {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    button {
+      align-self: flex-end;
+      padding: 0 35px;
+    }
+  }
+}
+.s-time-block {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  .s-time-val {
+    width:  35%;
+    margin-right: 15px;
+    button {
+      font-size: 14px;
+    }
+  }
+}
+.schedule-list.container  {
+  padding: 20px 15px  80px 10px;
+  margin-bottom: 20px;
+}
+.s-people-list {
+  width:  100%;
+  mat-card-title {
+    font-size: 16px;
+  }
+  .mat-card {
+    padding: 12px;
+    mat-card-subtitle {
+      margin-bottom: 0;
+      font-size: 12px;
+      align-items: center;
+      display: flex;
+      mat-icon {
+        margin-right: 5px;
+        font-size: 18px;
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+}
+.add-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  cursor: pointer;
+}
+.no-people {
+  color: #fe4081;
+  font-size: 13px;
+  margin-top: 10px;
+  display: block;
+}
+mat-card  {
+  position: relative;
+  .delete-shift {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    font-size: 22px;
+    color: #fe4081;
+  }
+}
+mat-card-subtitle a {
+  text-decoration: none;
+  color: gray;
+}

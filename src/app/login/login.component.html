@@ -1,0 +1,46 @@
+<mat-tab-group>
+  <mat-tab label="Регистрация">
+    <div class="registr">
+      <form [formGroup]="registrForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Ник</mat-label>
+          <input  formControlName="username" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Имя и Фамилия</mat-label>
+          <input  formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Пароль</mat-label>
+          <input type="password"  formControlName="password" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Телефон</mat-label>
+          <input  formControlName="phone" matInput>
+        </mat-form-field>
+      </form>
+      <button mat-flat-button color="primary" (click)="signUp()">Создать аккаунт</button>
+    </div>
+  </mat-tab>
+  <mat-tab label="Логин">
+    <div class="registr">
+      <form [formGroup]="loginForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Ник</mat-label>
+          <input  formControlName="username" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Пароль</mat-label>
+          <input type="password"  formControlName="password" matInput>
+        </mat-form-field>
+
+      </form>
+      <button mat-flat-button color="primary" (click)="login()">Войти</button>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+

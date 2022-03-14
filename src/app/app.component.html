@@ -1,0 +1,52 @@
+<div class="wrapper">
+
+  <div class="main">
+<!--    <app-header *ngIf="currentRoute !== 'login'"></app-header>-->
+    <p *ngIf="currentRoute !== 'login'" class="header-main">
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>{{userInfo?.name}}</span>
+          <span class="example-spacer"></span>
+          <mat-icon (click)="openInfo()">info</mat-icon>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+                  (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </p>
+    <mat-sidenav-container class="example-container">
+
+      <mat-sidenav #sidenav mode="over" position="end">
+        <mat-list class="menu" role="list" (click)="sidenav.toggle()">
+          <mat-list-item role="listitem" [routerLink]="['/home']"><mat-icon>home</mat-icon> Главная</mat-list-item>
+          <mat-list-item role="listitem"  [routerLink]="['/schedule']"><mat-icon>access_time</mat-icon> Смены </mat-list-item>
+          <mat-list-item role="listitem" [routerLink]="['/points']"><mat-icon>place</mat-icon> Пункты</mat-list-item>
+          <mat-list-item role="listitem" [routerLink]="['/links']"><mat-icon>link</mat-icon> Полезные ссылки</mat-list-item>
+          <mat-list-item *ngIf="userInfo?.isHead" role="listitem" [routerLink]="['/admin']"><mat-icon>supervised_user_circle</mat-icon> Админ панель</mat-list-item>
+          <mat-list-item role="listitem" (click)="logout()"><mat-icon>exit_to_app</mat-icon> Выйти</mat-list-item>
+        </mat-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content (click)="sidenav.close()">
+        <div class="content">
+          <router-outlet></router-outlet>
+          <app-here-block
+            *ngIf="currentRoute !== 'login'"></app-here-block>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+<!--    <mat-drawer-container class="example-container" autosize>-->
+<!--    <app-header *ngIf="currentRoute !== 'login'"></app-header>-->
+
+<!--      <div class="content">-->
+<!--         <router-outlet></router-outlet>-->
+<!--       <app-here-block-->
+<!--         *ngIf="currentRoute !== 'login'"></app-here-block>-->
+<!--      </div>-->
+
+<!--    </mat-drawer-container>-->
+  </div>
+</div>

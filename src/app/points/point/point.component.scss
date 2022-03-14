@@ -1,0 +1,27 @@
+.field-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0;
+  p {
+    width: 60%;
+  }
+}
+form {
+  width: 100%;
+}
+mat-form-field.small-field {
+    width: 42px;
+}
+mat-card {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  margin-bottom: 5px;
+  mat-icon {
+    margin-right: 10px;
+  }
+}
+.replace-check {
+  margin-right: 10px;
+}

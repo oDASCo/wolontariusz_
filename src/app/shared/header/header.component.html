@@ -1,0 +1,23 @@
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>{{userInfo?.name}}</span>
+      <span class="example-spacer"></span>
+      <mat-icon (click)="openInfo()">info</mat-icon>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+              (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
+<!--<mat-drawer #drawer class="example-sidenav" position="end">-->
+<!--  <mat-list class="menu" role="list" (click)="drawer.toggle()">-->
+<!--    <mat-list-item role="listitem" [routerLink]="['/home']"><mat-icon>home</mat-icon> Главная</mat-list-item>-->
+<!--    <mat-list-item role="listitem"  [routerLink]="['/schedule']"><mat-icon>access_time</mat-icon> Смены </mat-list-item>-->
+<!--    <mat-list-item role="listitem" [routerLink]="['/points']"><mat-icon>place</mat-icon> Пункты</mat-list-item>-->
+<!--    <mat-list-item role="listitem" [routerLink]="['/links']"><mat-icon>link</mat-icon> Полезные ссылки</mat-list-item>-->
+<!--    <mat-list-item role="listitem" [routerLink]="['/admin']"><mat-icon>supervised_user_circle</mat-icon> Админ панель</mat-list-item>-->
+<!--    <mat-list-item role="listitem" (click)="logout()"><mat-icon>exit_to_app</mat-icon> Выйти</mat-list-item>-->
+<!--  </mat-list>-->
+<!--</mat-drawer>-->

@@ -1,0 +1,12 @@
+<div class="points-list container">
+  <h3 class="title">Пункты</h3>
+  <div class="points">
+    <mat-card class="example-card" *ngFor="let point of points" [routerLink]="point.key">
+      <mat-card-title-group>
+        <mat-card-title>{{point.name}} <mat-icon>keyboard_arrow_right</mat-icon></mat-card-title>
+        <mat-card-subtitle>{{+point.volNum + +point.external_vol}} волонтеров | <span *ngIf="point.places">{{point.places}} спальных мест</span></mat-card-subtitle>
+        <mat-card-subtitle style="color: red;">{{point.comment}}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card>
+  </div>
+</div>

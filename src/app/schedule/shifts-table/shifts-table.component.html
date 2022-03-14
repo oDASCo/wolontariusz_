@@ -1,0 +1,32 @@
+<div class="schedule-list container">
+  <!--  <div class="s-head-block">-->
+  <!--    <p>Время</p>-->
+  <!--    <p>Волонтеры</p>-->
+  <!--  </div>-->
+  <div class="s-day-block" *ngFor="let shift of shifts">
+    <div class="s-day-value">
+      <button mat-flat-button color="accent">{{shift.date}}</button>
+    </div>
+    <div class="s-time-block" *ngFor="let time of shift.times">
+      <div class="s-time-val">
+        <button mat-stroked-button color="accent">{{time.time}}</button>
+      </div>
+      <div class="s-people-list">
+        <span class="no-people" *ngIf="!time.people.length">Нет волонтеров</span>
+        <mat-card class="example-card"  *ngFor="let person of time['people']">
+          <mat-card-title-group>
+            <mat-card-title>{{person?.name}}</mat-card-title>
+            <mat-card-subtitle><mat-icon> phone</mat-icon> <a href="tel: ${{person?.phone}}}">{{person?.phone}}</a></mat-card-subtitle>
+          </mat-card-title-group>
+          <mat-icon class="delete-shift" (click)="deleteShift(shift.id, time.time, person)">cancel</mat-icon>
+        </mat-card>
+      </div>
+      <mat-divider style="margin-top: 10px;"></mat-divider>
+    </div>
+  </div>
+  <button [routerLink]="'add-shift'"  class="add-btn" mat-fab color="primary" aria-label="Add icon">
+    <mat-icon>person_add</mat-icon>
+  </button>
+
+</div>
+

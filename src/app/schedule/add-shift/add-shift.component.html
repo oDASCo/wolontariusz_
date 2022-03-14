@@ -1,0 +1,41 @@
+<div class="schedule-list container">
+  <form [formGroup]="myForm">
+    <div class="field-line">
+      <p>Волонтер: </p>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Начните писать имя волонтера</mat-label>
+        <input matInput
+               aria-label="Начните писать имя волонтера"
+               [matAutocomplete]="auto"
+               formControlName="volunteer">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let state of filteredStates | async" [value]="state.username">
+            <span>{{state.name}}</span> |
+            <small>Phone: {{state.phone}}</small>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+    </div>
+    <div class="field-line">
+      <p>Дата: </p>
+      <mat-form-field appearance="fill">
+        <mat-label>Выберите дату</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="field-line">
+      <p>Время: </p>
+      <mat-form-field appearance="fill">
+        <mat-select formControlName="timeRange">
+          <mat-option *ngFor="let time of times" [value]="time">{{time}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+  <button (click)="addShift()" mat-flat-button color="primary">Сохранить</button>
+</div>
+

@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: Greycliff, sans-serif;
+  height: 100vh;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.example-container {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
+.welcome-text {
+  text-align: center;
+}
+.container {
+  padding: 20px 20px 120px 20px;
+  &.home-page {
+    padding: 0;
+    .inner-content {
+      padding: 20px 20px;
+      mat-form-field {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+mat-dialog-container {
+  position: relative;
+  .close-dialog {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+mat-sidenav-content {
+  padding-top: 56px;
+}
+.mat-drawer {
+  padding: 56px 0;
+}

@@ -1,0 +1,15 @@
+.here-block {
+  position: fixed;
+  bottom: 0;
+  padding: 10px 30px;
+  background: #4051b5;
+  width: 100%;
+  color: white;
+  .here-line {
+    font-size: 26px;
+    margin-bottom: 10px;
+    mat-slide-toggle {
+      margin-left: 10px;
+    }
+  }
+}

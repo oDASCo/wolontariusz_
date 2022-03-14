@@ -1,0 +1,26 @@
+<div  class="home-page container">
+  <div class="inner-content">
+    <p class="welcome-text">{{mainText?.text}}</p>
+    <button *ngIf="user?.isHead" style="margin-bottom: 20px;" mat-flat-button color="primary" (click)="changeText()">Изменить текст</button>
+    <div>Сейчас я нахожусь:
+      <mat-form-field appearance="fill">
+        <mat-label>Выберите пункт</mat-label>
+        <mat-select [formControl]="pointControl">
+          <mat-option value="free">Я свободен</mat-option>
+          <mat-option value="main-enter">Главный пункт - вход</mat-option>
+          <mat-option value="main-hall">Главный пункт - зал</mat-option>
+          <mat-option value="storage">Склад</mat-option>
+          <mat-option value="cash-desk">Кассы</mat-option>
+          <mat-option value="bus-station">Автовокзал - ясли</mat-option>
+          <mat-option value="pawia">Pawia</mat-option>
+          <mat-option value="old-station">Старый вокзал</mat-option>
+        </mat-select>
+      </mat-form-field></div>
+    <mat-list class="menu replace-list" role="list">
+      <mat-list-item role="listitem" *ngFor="let point of replacePoints">
+        <mat-icon>find_replace</mat-icon>
+        <span style="font-weight: bold; margin-right: 5px">{{point?.name}}:  </span> Нужна замена в {{point?.replaceTime}}
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
